@@ -27,3 +27,28 @@ Deve ser possível editar ou excluir fornecedores já cadastrados no sistema.
 Deve ser possível visualizar os pratos mais e menos vendidos do restaurante.
 Deve ser possível visualizar o lucro diário, semanal e mensal do restaurante. 
 
+5. Como Cliente, quero poder realizar pedidos de comida pelo aplicativo do restaurante 
+para receber na minha casa.
+
+Critérios de aceitação:
+Deve ser possível visualizar o cardápio do restaurante no aplicativo.
+Deve ser possível selecionar os itens que desejo pedir e informar meu endereço para entrega.
+Deve ser possível visualizar o status do meu pedido em tempo real.
+Deve ser possível cancelar o pedido antes que ele seja preparado.
+
+6. Como Entregador, quero receber notificações dos novos pedidos que devo entregar 
+para que possa organizar minha rota de entrega.
+
+Critérios de aceitação:
+Deve ser possível visualizar os pedidos pendentes de entrega no meu aplicativo.
+Deve ser possível visualizar o endereço de entrega e o contato do cliente.
+Deve ser possível visualizar a quanto tempo cada pedido está “a caminho”.
+Deve ser possível alterar o status do pedido para "entregue" após a entrega ser realizada.
+
+7. Como Cozinheiro, quero poder ver os pedidos de comida que foram feitos para que 
+possa prepará-los de acordo com as especificações do cliente.
+
+Critérios de aceitação:
+Deve ser possível visualizar os pedidos pendentes de preparo no sistema.
+Deve ser possível ver os detalhes de cada pedido, incluindo os itens selecionados pelo cliente.
+Deve ser possível marcar um pedido como "preparado" após finalizar o seu preparo
