@@ -19,3 +19,20 @@ Cartões CRC:
    - Entregador  
    - Pedido  
    - Cardápio  
+3. Classe: Entregador
+Responsabilidades:
+	•	Receber alertas sobre os pedidos pendentes de entrega.
+	•	Observar os endereços e prazos de cada entrega.
+	•	Marcar o pedido como “entregue”.
+Colaborações:
+	•	Consumidor
+	•	Pedido
+
+4. Classe: Chef de Cozinha
+Responsabilidades:
+	•	Preparar os pedidos conforme as preferências dos clientes.
+	•	Atualizar no sistema a disponibilidade dos ingredientes.
+	•	Informar que o pedido está “pronto para entrega”.
+Colaborações:
+	•	Consumidor
+	•	Pedido
