@@ -10,4 +10,4 @@ Funcionalidades do sistema: A plataforma visa simplificar todos os processos de 
 
 Como começar a usar o sistema: O processo começa com o cadastro inicial feito pelo proprietário, que preencherá os dados do restaurante. Com isso, ele poderá fornecer acesso aos cozinheiros e registrar o estabelecimento em plataformas de pedidos de comida, onde os entregadores também terão acesso às funcionalidades do sistema. Assim, os clientes poderão fazer seus pedidos, que serão recebidos pelos cozinheiros, e, após a preparação, as informações necessárias para a entrega serão repassadas ao entregador.
 
-Feito por : Pedro Henrique Rodrigues Pina, Vitor Coimbra Pontes Maia, Lucas Lima Ribeiro, Lucas de Souza Almeida.
+Feito por : Pedro Henrique Rodrigues Pina, Vitor Coimbra Pontes Maia, Lucas Lima Ribeiro, Lucas de Almeida Souza.
