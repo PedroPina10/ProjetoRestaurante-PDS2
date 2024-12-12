@@ -1,1 +1,21 @@
-Escrever os CRCs aqui
+
+Cartões CRC:
+
+1. Classe: Proprietário do Restaurante  
+   Responsabilidades:  
+   - Gerenciar os fornecedores registrados no sistema.  
+   - Monitorar o status do estoque de cada item.  
+   - Acessar relatórios de vendas e faturamento.  
+   Colaborações: 
+   - Relatório
+
+2. Classe: Cliente
+   Responsabilidades: 
+   - Realizar pedidos de comida por meio do aplicativo.  
+   - Acompanhar o progresso dos seus pedidos em tempo real.  
+   - Cancelar pedidos antes que o preparo seja iniciado.  
+   - Consultar o cardápio disponível.  
+   Colaborações:  
+   - Entregador  
+   - Pedido  
+   - Cardápio  
