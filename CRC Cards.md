@@ -37,7 +37,7 @@ Colaborações:
 	-	Consumidor
 	-	Pedido
    5. Classe: Pedido
-Responsabilidades:
+      Responsabilidades:
 	-	Registrar as informações dos pedidos de cada cliente.
 	-	Detalhar as especificações de cada pedido.
 Colaborações:
@@ -48,7 +48,7 @@ Colaborações:
 	-	Entregador
 
 6. Classe: Relatório
-Responsabilidades:
+   Responsabilidades:
 	-	Registrar informações das vendas realizadas.
 	-	Calcular os lucros e as despesas do restaurante.
 Colaborações:
