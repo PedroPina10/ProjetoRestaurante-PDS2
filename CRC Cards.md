@@ -21,39 +21,39 @@ Cartões CRC:
    - Cardápio  
 3. Classe: Entregador
 Responsabilidades:
-	•	Receber alertas sobre os pedidos pendentes de entrega.
-	•	Observar os endereços e prazos de cada entrega.
-	•	Marcar o pedido como “entregue”.
+	-	Receber alertas sobre os pedidos pendentes de entrega.
+	-	Observar os endereços e prazos de cada entrega.
+	-	Marcar o pedido como “entregue”.
 Colaborações:
-	•	Consumidor
-	•	Pedido
+	-	Consumidor
+	-	Pedido
 
 4. Classe: Chef de Cozinha
 Responsabilidades:
-	•	Preparar os pedidos conforme as preferências dos clientes.
-	•	Atualizar no sistema a disponibilidade dos ingredientes.
-	•	Informar que o pedido está “pronto para entrega”.
+	-	Preparar os pedidos conforme as preferências dos clientes.
+	-	Atualizar no sistema a disponibilidade dos ingredientes.
+	-	Informar que o pedido está “pronto para entrega”.
 Colaborações:
-	•	Consumidor
-	•	Pedido
+	-	Consumidor
+	-	Pedido
    5. Classe: Pedido
 Responsabilidades:
-	•	Registrar as informações dos pedidos de cada cliente.
-	•	Detalhar as especificações de cada pedido.
+	-	Registrar as informações dos pedidos de cada cliente.
+	-	Detalhar as especificações de cada pedido.
 Colaborações:
-	•	Proprietário do Restaurante
-	•	Consumidor
-	•	Chef de Cozinha
-	•	Relatório
-	•	Entregador
+	-	Proprietário do Restaurante
+	-	Consumidor
+	-	Chef de Cozinha
+	-	Relatório
+	-	Entregador
 
 6. Classe: Relatório
 Responsabilidades:
-	•	Registrar informações das vendas realizadas.
-	•	Calcular os lucros e as despesas do restaurante.
+	-	Registrar informações das vendas realizadas.
+	-	Calcular os lucros e as despesas do restaurante.
 Colaborações:
-	•	Pedido
+	-	Pedido
 
 7. Classe: Cardápio
 Colaborações :
-	•	Mostrar os itens disponíveis no menu.
+	-	Mostrar os itens disponíveis no menu.
