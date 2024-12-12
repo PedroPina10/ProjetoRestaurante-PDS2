@@ -1,1 +1,8 @@
-Modelagem aqui 
+Reataurante
+User Stories:
+
+Classe Pedido: Responsável por registrar e armazenar o pedido de cada cliente. Ela pode ser atualizada para refletir os seguintes status: “pedido enviado”, “pedido pronto”, “pedido a caminho” e “pedido entregue”.
+Critérios de aceitação: O sistema deve permitir o armazenamento de cada pedido de cliente, fornecendo essas informações para as demais classes sempre que necessário. Além disso, a classe deve mostrar o status atual de cada pedido.
+
+Classe Cardápio: Responsável por gerenciar as atualizações dos itens disponíveis no restaurante, com a capacidade de ser atualizada sempre que houver mudanças.
+Critérios de aceitação: O sistema deve possibilitar a visualização completa dos itens do cardápio, incluindo suas especificações e possíveis variações.
