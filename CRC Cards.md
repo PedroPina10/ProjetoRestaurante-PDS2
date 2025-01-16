@@ -1,20 +1,21 @@
 
 Cartões CRC:
 
-1. Classe: Proprietário do Restaurante  
+1. Classe: Dono  
    Responsabilidades:  
    - Gerenciar os fornecedores registrados no sistema.  
-   - Monitorar o status do estoque de cada item.  
+   - Monitorar e editar o cardapio 
    - Acessar relatórios de vendas e faturamento.  
    Colaborações: 
    - Relatório
 
 2. Classe: Cliente
    Responsabilidades: 
-   - Realizar pedidos de comida por meio do aplicativo.  
-   - Acompanhar o progresso dos seus pedidos em tempo real.  
+   - Realizar pedidos de comida.  
+   - Acompanhar o progresso dos seus pedidos.  
    - Cancelar pedidos antes que o preparo seja iniciado.  
-   - Consultar o cardápio disponível.  
+   - Consultar o cardápio disponível.
+     
    Colaborações:  
    - Entregador  
    - Pedido  
@@ -22,40 +23,40 @@ Cartões CRC:
       
 3. Classe: Entregador
    Responsabilidades:
-   - Receber alertas sobre os pedidos pendentes de entrega.
-   - Observar os endereços e prazos de cada entrega.
+   - Receber novo pedido
+   - Observar endereço
    - Marcar o pedido como “entregue”.
    Colaborações:
-   - Consumidor
+   - Cliente
    - Pedido
 
 4. Classe: Chef de Cozinha
    Responsabilidades:
-   - Preparar os pedidos conforme as preferências dos clientes.
-   - Atualizar no sistema a disponibilidade dos ingredientes.
+   - Vizualisar os pedidos dos clientes.
+   - Preparar os pedidos dos clientes.
    - Informar que o pedido está “pronto para entrega”.
    Colaborações:
-   - Consumidor
+   - Cliente
    - Pedido
      
-5. Classe: Pedido
+7. Classe: Pedido
    Responsabilidades:
    - Registrar as informações dos pedidos de cada cliente.
-   - Detalhar as especificações de cada pedido.
+   - Apagar pedidos que forem cancelados
    Colaborações:
-   - Proprietário do Restaurante
-   - Consumidor
-   - Chef de Cozinha
+   - Dono
+   - Cliente
+   - Cozinheiro
    - Relatório
    - Entregador
 
-6. Classe: Relatório
+8. Classe: Relatório
    Responsabilidades:
    - Registrar informações das vendas realizadas.
    - Calcular os lucros e as despesas do restaurante.
    Colaborações:
    - Pedido
 
-7. Classe: Cardápio
+9. Classe: Cardápio
    Colaborações :
    - Mostrar os itens disponíveis no menu.
