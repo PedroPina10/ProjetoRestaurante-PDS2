@@ -1,4 +1,4 @@
-# PDS2-20242-TA-5-Site para Gerenciar Pizzaria
+# PDS2-20242-TA-5-Site para Gerenciar Restaurante
 
 Sobre o projeto: O projeto consiste em uma plataforma online voltada para restaurantes, com foco na produção e entrega de alimentos. Seu objetivo é oferecer um serviço rápido e de qualidade para todos os usuários envolvidos.
 
