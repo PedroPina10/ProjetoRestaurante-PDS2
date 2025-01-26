@@ -66,20 +66,10 @@ Exibição de pedidos prontos para entrega.
 
 Marcação de pedidos como entregues.
 
-Como Executar
 
-Clone o Repositório:
-
-git clone <URL_DO_REPOSITORIO>
-
-Compile o Código:
-Use um compilador de C++, como g++, para compilar o projeto. Certifique-se de incluir todos os arquivos .cpp:
-
-g++ main.cpp Cardapio.cpp Cliente.cpp DonoRestaurante.cpp Fornecedor.cpp Pedido.cpp Relatorio.cpp Cozinheiro.cpp Entregador.cpp Utils.cpp -o restaurante
 
 Execute o Programa:
 
-./restaurante
 
 Senha Padrão
 
