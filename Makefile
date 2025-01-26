@@ -1,10 +1,11 @@
 # Variáveis auxiliares
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
-TARGET = vpl_execution
+TARGET = $(EXEC_DIR)/tp_execution
 
 # Diretórios auxiliares
 BUILD_DIR = obj
+EXEC_DIR = bin
 SRC_DIR = src
 INCLUDE_DIR = include
 
@@ -17,6 +18,7 @@ all: $(TARGET)
 
 # Linkagem do executável
 $(TARGET): $(OBJECTS)
+	@if not exist "$(EXEC_DIR)" mkdir "$(EXEC_DIR)"
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $@
 
 # Compilação de cada arquivo .cpp em .o
@@ -27,7 +29,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 # Limpeza dos arquivos gerados
 clean:
 	@if exist "$(BUILD_DIR)" rmdir /S /Q "$(BUILD_DIR)"
-	@if exist "$(TARGET)" del "$(TARGET)"
+	@if exist "$(EXEC_DIR)" rmdir /S /Q "$(EXEC_DIR)"
 
 run: $(TARGET)
 	$(TARGET)

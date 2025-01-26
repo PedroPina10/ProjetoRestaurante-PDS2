@@ -5,7 +5,7 @@
 std::map<std::string, std::string> Cliente::clientes;
 
 Cliente::Cliente(Cardapio* cardapioRef, std::vector<Pedido*>* pedidosRef)
-    : cardapio(cardapioRef), listaPedidos(pedidosRef) {
+    :listaPedidos(pedidosRef), cardapio(cardapioRef) {
 }
 
 bool Cliente::autenticar(const std::string& user, const std::string& pass) {
