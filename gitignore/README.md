@@ -1,13 +1,97 @@
-# PDS2-20242-TA-5-Site para Gerenciar Restaurante
+README do Sistema de Gerenciamento de Restaurante
 
-Sobre o projeto: O projeto consiste em uma plataforma online voltada para restaurantes, com foco na produção e entrega de alimentos. Seu objetivo é oferecer um serviço rápido e de qualidade para todos os usuários envolvidos.
+Sobre o Projeto
 
-Usuários atendidos pelo sistema: Os principais usuários do sistema são o proprietário do restaurante, o cozinheiro responsável pelo preparo dos pratos, o entregador e o cliente.
+Este projeto é um sistema de gerenciamento de restaurante que simula as principais funções de um estabelecimento gastronômico. Ele é implementado em C++ e organizado de forma modular, facilitando a manutenção e expansão do código.
 
-Cada tipo de usuário possui um acesso personalizado, direcionando-o para uma área com funcionalidades específicas de acordo com seu papel. O proprietário do restaurante terá acesso para cadastrar fornecedores e gerar relatórios financeiros sobre lucros e despesas. O cliente poderá realizar pedidos e recebê-los em sua residência. O entregador será notificado sobre os pedidos na sua região e as entregas que ele pode realizar. O cozinheiro receberá as ordens de preparo dos clientes com todos os detalhes necessários.
+O sistema é dividido em diferentes papéis que interagem entre si: Dono do Restaurante, Cliente, Cozinheiro e Entregador. Cada papel possui funcionalidades específicas para gerenciar o cardápio, pedidos, relatórios e mais.
 
-Funcionalidades do sistema: A plataforma visa simplificar todos os processos de um restaurante, desde o pedido do cliente até a geração de relatórios de vendas para o proprietário. O sistema oferece uma ferramenta online que reúne todas as funcionalidades essenciais para o funcionamento de um restaurante, automatizando e agilizando processos que normalmente seriam feitos manualmente, o que reduz a necessidade de pessoal e economiza tempo e dinheiro.
+Estrutura do Código
 
-Como começar a usar o sistema: O processo começa com o cadastro inicial feito pelo proprietário, que preencherá os dados do restaurante. Com isso, ele poderá fornecer acesso aos cozinheiros e registrar o estabelecimento em plataformas de pedidos de comida, onde os entregadores também terão acesso às funcionalidades do sistema. Assim, os clientes poderão fazer seus pedidos, que serão recebidos pelos cozinheiros, e, após a preparação, as informações necessárias para a entrega serão repassadas ao entregador.
+O projeto foi modularizado em diferentes arquivos para organização e fácil manutenção:
 
+main.cpp: Contém o ponto de entrada do programa e a lógica principal que conecta os diferentes módulos.
+
+Cardapio.hpp e Cardapio.cpp: Gerencia os itens do cardápio, permitindo adicionar, editar, remover e exibir itens.
+
+Cliente.hpp e Cliente.cpp: Gerencia as interações com os clientes, como login, criação de conta, realização e consulta de pedidos.
+
+DonoRestaurante.hpp e DonoRestaurante.cpp: Permite que o dono do restaurante gerencie o cardápio, fornecedores e visualize relatórios. A senha padrão do dono é 0000.
+
+Fornecedor.hpp e Fornecedor.cpp: Gerencia os fornecedores do restaurante, incluindo cadastro, edição e exclusão.
+
+Pedido.hpp e Pedido.cpp: Representa os pedidos feitos pelos clientes, armazenando itens, status e detalhes do cliente.
+
+Relatorio.hpp e Relatorio.cpp: Gera relatórios sobre vendas, clientes cadastrados, lucro, e outras estatísticas.
+
+Cozinheiro.hpp e Cozinheiro.cpp: Exibe pedidos pendentes e permite marcar pedidos como prontos.
+
+Entregador.hpp e Entregador.cpp: Exibe pedidos prontos para entrega e permite marcar pedidos como entregues.
+
+Utils.hpp e Utils.cpp: Contém funções auxiliares, como validação de entradas e impressão de linhas decorativas.
+
+Funcionalidades Principais
+
+Dono do Restaurante
+
+Senha Padrão: 0000
+
+Gerenciamento de cardápio (adicionar, editar e remover itens).
+
+Cadastro e edição de fornecedores.
+
+Geração de relatórios sobre o desempenho do restaurante (lucro, itens mais vendidos, etc.).
+
+Alteração da senha.
+
+Cliente
+
+Criação de conta e login.
+
+Consulta do cardápio.
+
+Realização de pedidos, incluindo a seleção de itens, quantidade e endereço de entrega.
+
+Consulta do status dos pedidos realizados.
+
+Cozinheiro
+
+Exibição de pedidos pendentes.
+
+Marcação de pedidos como prontos.
+
+Entregador
+
+Exibição de pedidos prontos para entrega.
+
+Marcação de pedidos como entregues.
+
+Como Executar
+
+Clone o Repositório:
+
+git clone <URL_DO_REPOSITORIO>
+
+Compile o Código:
+Use um compilador de C++, como g++, para compilar o projeto. Certifique-se de incluir todos os arquivos .cpp:
+
+g++ main.cpp Cardapio.cpp Cliente.cpp DonoRestaurante.cpp Fornecedor.cpp Pedido.cpp Relatorio.cpp Cozinheiro.cpp Entregador.cpp Utils.cpp -o restaurante
+
+Execute o Programa:
+
+./restaurante
+
+Senha Padrão
+
+A senha inicial para o Dono do Restaurante é 0000. Essa senha pode ser alterada no próprio sistema.
+
+Melhorias Futuras
+
+Implementação de testes automatizados para garantir a qualidade do código.
+
+Expansão das funcionalidades de relatório.
+
+Melhorias na interface de interação com o usuário.
+
+Suporte para persistência de dados em arquivos ou banco de dados.
 Feito por : Pedro Henrique Rodrigues Pina, Vitor Coimbra Pontes Maia, Lucas Lima Ribeiro, Lucas de Almeida Souza.
