@@ -1,4 +1,4 @@
-
+#include "Relatorio.hpp"
 Relatorio::Relatorio(const std::vector<Pedido*>& pedidos) : pedidos(pedidos) {}
 
 void Relatorio::exibirItensMaisVendidos() const {
