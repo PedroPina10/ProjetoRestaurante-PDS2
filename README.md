@@ -83,5 +83,7 @@ Expansão das funcionalidades de relatório.
 
 Melhorias na interface de interação com o usuário.
 
+Documentação do projeto: https://lucasalmeida1702.github.io/Gerenciamento-Restaurante/
+
 Suporte para persistência de dados em arquivos ou banco de dados.
 Feito por : Pedro Henrique Rodrigues Pina, Vitor Coimbra Pontes Maia, Lucas Lima Ribeiro, Lucas de Almeida Souza.
