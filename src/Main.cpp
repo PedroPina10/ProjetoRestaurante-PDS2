@@ -14,10 +14,11 @@ int main() {
     DonoRestaurante dono(&cardapio, listaPedidos);
 
     // Populando cardápio com alguns itens iniciais
-    cardapio.adicionarItem("Pizza", "Pizza de mussarela", 40.0);
-    cardapio.adicionarItem("Macarrao", "Macarrao ao sugo", 25.0);
-    cardapio.adicionarItem("Feijoada", "Feijoada completa", 35.0);
-    cardapio.adicionarItem("Batata frita", "Batata frita crocante", 15.0);
+cardapio.adicionarItem("Pizza de mussarela", "A classica mussarela, com muito queijo e sabor inconfundivel.", 40.0);
+cardapio.adicionarItem("Pizza Portuguesa", "Uma deliciosa combinacao de presunto, ovos, cebola e azeitonas.", 25.0);
+cardapio.adicionarItem("Pizza de Frango com Catupiry", "Frango desfiado temperado com o cremoso catupiry.", 35.0);
+cardapio.adicionarItem("Pizza 4 Queijos", "Uma explosao de sabores com mussarela, provolone, parmesao e gorgonzola.", 45.0);
+cardapio.adicionarItem("Batata Frita com Bacon", "Batata extremamente croncante com MUUITO bacon.", 15.0);
 
     int usuario;
     do {
@@ -33,7 +34,6 @@ int main() {
         printLine();
 
         usuario = validarEntradaNumerica();
-
         if (usuario == 1) {
             dono.actions_dono(Cliente::getClientes());
         }
