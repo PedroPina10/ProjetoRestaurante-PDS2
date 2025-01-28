@@ -1,7 +1,8 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
 #include "Cliente.hpp"
 #include "Cardapio.hpp"
 #include "Pedido.hpp"
-#include <gtest/gtest.h>
 
 class MockCardapio : public Cardapio {
 public:
@@ -12,52 +13,47 @@ public:
     }
 };
 
-TEST(ClienteTest, CriarConta) {
+TEST_CASE("Criar conta adiciona cliente ao sistema") {
     MockCardapio cardapio;
     std::vector<Pedido*> pedidos;
     Cliente::criarConta();
     auto clientes = Cliente::getClientes();
-    ASSERT_FALSE(clientes.empty());
+    CHECK_FALSE(clientes.empty());
 }
 
-TEST(ClienteTest, AutenticacaoBemSucedida) {
+TEST_CASE("Autenticacao bem-sucedida") {
     MockCardapio cardapio;
     std::vector<Pedido*> pedidos;
     Cliente::criarConta();
     Cliente cliente(&cardapio, &pedidos);
-    ASSERT_TRUE(cliente.entrar());
+    CHECK(cliente.entrar());
 }
 
-TEST(ClienteTest, AutenticacaoFalha) {
+TEST_CASE("Autenticacao falha") {
     MockCardapio cardapio;
     std::vector<Pedido*> pedidos;
     Cliente cliente(&cardapio, &pedidos);
-    ASSERT_FALSE(cliente.entrar());
+    CHECK_FALSE(cliente.entrar());
 }
 
-TEST(ClienteTest, AlterarSenha) {
+TEST_CASE("Alterar senha") {
     MockCardapio cardapio;
     std::vector<Pedido*> pedidos;
     Cliente::criarConta();
     Cliente cliente(&cardapio, &pedidos);
-    ASSERT_TRUE(cliente.entrar());
+    CHECK(cliente.entrar());
     cliente.alterarSenha();
     auto clientes = Cliente::getClientes();
-    ASSERT_EQ(clientes[cliente.getUsername()], cliente.getSenha());
+    CHECK_EQ(clientes[cliente.getUsername()], cliente.getSenha());
 }
 
-TEST(ClienteTest, RealizarPedido) {
+TEST_CASE("Realizar pedido") {
     MockCardapio cardapio;
     std::vector<Pedido*> pedidos;
     Cliente::criarConta();
     Cliente cliente(&cardapio, &pedidos);
-    ASSERT_TRUE(cliente.entrar());
+    CHECK(cliente.entrar());
     cliente.realizarPedido();
-    ASSERT_FALSE(pedidos.empty());
-}
-
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    CHECK_FALSE(pedidos.empty());
 }
 
