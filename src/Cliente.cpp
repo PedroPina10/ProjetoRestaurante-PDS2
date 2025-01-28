@@ -81,6 +81,7 @@ void Cliente::realizarPedido() {
         }
         else {
             std::cout << FG_VERMELHO << "Opcao invalida." << RESET << std::endl;
+            return;
         }
         do {
             std::cout << FG_CIANO << "Deseja adicionar mais itens? (s/n): " << RESET;
