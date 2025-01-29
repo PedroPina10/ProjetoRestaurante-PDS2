@@ -19,6 +19,12 @@ cardapio.adicionarItem("Pizza Portuguesa", "Uma deliciosa combinacao de presunto
 cardapio.adicionarItem("Pizza de Frango com Catupiry", "Frango desfiado temperado com o cremoso catupiry.", 35.0);
 cardapio.adicionarItem("Pizza 4 Queijos", "Uma explosao de sabores com mussarela, provolone, parmesao e gorgonzola.", 45.0);
 cardapio.adicionarItem("Batata Frita com Bacon", "Batata extremamente croncante com MUUITO bacon.", 15.0);
+cardapio.adicionarItem("Pizza Calabresa", "Calabresa fatiada com cebolas frescas e azeitonas pretas.", 30.0);
+cardapio.adicionarItem("Pizza Marguerita", "Tomate fresco, manjericão e queijo mussarela, a clássica italiana.", 32.0);
+cardapio.adicionarItem("Pizza de Pepperoni", "Fatias generosas de pepperoni com queijo derretido.", 38.0);
+cardapio.adicionarItem("Pizza de Bacon", "Crocantes pedaços de bacon sobre uma base de queijo derretido.", 36.0);
+cardapio.adicionarItem("Pizza Vegetariana", "Mix de vegetais frescos com queijo leve e molho especial.", 28.0);
+cardapio.adicionarItem("Pizza de Chocolate", "Cobertura de chocolate ao leite cremosa, ideal para os amantes de doce.", 42.0);
 
     int usuario;
     do {

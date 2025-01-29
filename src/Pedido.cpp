@@ -1,12 +1,23 @@
 #include "Pedido.hpp"
-
+#include <iostream>
 Pedido::Pedido(const std::string& cli, const std::string& end) : cliente(cli), endereco(end), status("Pedido feito") {}
 void Pedido::addItem(const Cardapio::Item& item, int quantidade) {
     itens.push_back({ item.nome, item.preco, quantidade });
 }
 
 void Pedido::setEndereco(const std::string& end) {
-    endereco = end;
+    std::string ende=end;
+    while(1){
+        if(validarSenha(ende)){
+        std::cout<<FG_VERMELHO <<"Endereco Invalido!"; 
+        std::cout<< FG_CIANO <<" Digite o endreco novamente:"<< RESET;
+        std::getline(std::cin,ende);
+        }
+        else{
+            endereco = ende;
+            break;
+        }
+    }
 }
 
 void Pedido::cancelaPedido() {
