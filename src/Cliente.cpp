@@ -86,16 +86,19 @@ void Cliente::alterarSenha() {
 
 void Cliente::realizarPedido() {
     Pedido* novoPedido = new Pedido(username, "");
+    double valorTotal = 0.0;
     std::string mais;
+
     do {
         cardapio->exibirCardapio();
-        std::cout << FG_CIANO << "Escolha o numero do item para adicionar ao pedido: " << RESET;
+        std::cout << FG_CIANO << "Escolha o número do item para adicionar ao pedido: " << RESET;
         int escolha = validarEntradaNumerica();
         const auto& itens = cardapio->getItens();
         if (escolha > 0 && escolha <= (int)itens.size()) {
             std::cout << FG_BRANCO << "Voce escolheu: " << FG_CIANO << itens[escolha - 1].nome << RESET << std::endl;
             std::cout << FG_CIANO << "Quantas unidades? " << RESET;
             int quantidade = validarEntradaNumerica();
+            valorTotal += itens[escolha - 1].preco * quantidade;
             novoPedido->addItem(itens[escolha - 1], quantidade);
         }
         else {
@@ -107,18 +110,23 @@ void Cliente::realizarPedido() {
             std::cin >> mais;
             std::cin.ignore();
             if (!validarEntradaSimNao(mais)) {
-                std::cout << FG_VERMELHO << "Entrada invalida. Digite 's' para Sim ou 'n' para Nao." << RESET << std::endl;
+                std::cout << FG_VERMELHO << "Entrada inválida. Digite 's' para Sim ou 'n' para Não." << RESET << std::endl;
             }
         } while (!validarEntradaSimNao(mais));
     } while (mais == "s" || mais == "S");
 
-    std::cout << FG_CIANO << "Digite o endereco de entrega: " << RESET;
+    // Aplica desconto se disponível
+    aplicarDescontoSeDisponivel(valorTotal);
+
+    std::cout << FG_CIANO << "O valor total do pedido é: R$ " << valorTotal << RESET << std::endl;
+
+    std::cout << FG_CIANO << "Digite o endereço de entrega: " << RESET;
     std::string endereco;
     std::getline(std::cin, endereco);
     novoPedido->setEndereco(endereco);
 
     printLine();
-    std::cout << FG_CIANO << "Confirmacao do pedido:" << RESET << std::endl;
+    std::cout << FG_CIANO << "Confirmação do pedido:" << RESET << std::endl;
     novoPedido->exibirResumo();
     printLine();
 
@@ -128,13 +136,14 @@ void Cliente::realizarPedido() {
         std::cin >> confirmar;
         std::cin.ignore();
         if (!validarEntradaSimNao(confirmar)) {
-            std::cout << FG_VERMELHO << "Entrada invalida. Digite 's' para Sim ou 'n' para Nao." << RESET << std::endl;
+            std::cout << FG_VERMELHO << "Entrada inválida. Digite 's' para Sim ou 'n' para Não." << RESET << std::endl;
         }
     } while (!validarEntradaSimNao(confirmar));
 
     if (confirmar == "s" || confirmar == "S") {
         listaPedidos->push_back(novoPedido);
         std::cout << FG_VERDE << "Pedido realizado com sucesso!" << RESET << std::endl;
+        acumularPontos(valorTotal); // Acumula pontos após o pedido ser confirmado
     }
     else {
         delete novoPedido;
@@ -162,7 +171,9 @@ void Cliente::actions_cliente() {
         std::cout << FG_BRANCO << "2. Realizar pedido" << RESET << std::endl;
         std::cout << FG_BRANCO << "3. Ver status do pedido" << RESET << std::endl;
         std::cout << FG_BRANCO << "4. Alterar senha" << RESET << std::endl;
-        std::cout << FG_VERMELHO << "5. Sair" << RESET << std::endl;
+        std::cout << FG_BRANCO << "5. Ver pontos acumulados" << RESET << std::endl;
+        std::cout << FG_VERMELHO << "6. Sair" << RESET << std::endl;
+
         printLine();
         opcao = validarEntradaNumerica();
         if (opcao == 1) {
@@ -177,7 +188,10 @@ void Cliente::actions_cliente() {
         else if (opcao == 4) {
             alterarSenha();
         }
-    } while (opcao != 5);
+        else if (opcao == 5) {
+            exibirPontos();
+        }
+    } while (opcao != 6);
 }
 
 void Cliente::menuInicial(Cardapio* cardapio, std::vector<Pedido*>* listaPedidos) {
@@ -201,6 +215,30 @@ void Cliente::menuInicial(Cardapio* cardapio, std::vector<Pedido*>* listaPedidos
             criarConta();
         }
     } while (opcao != 3);
+}
+
+void Cliente::acumularPontos(double valorPedido) {
+    int pontosGanhos = valorPedido / 10;
+    pontosRecompensa[username] += pontosGanhos;
+    std::cout << FG_VERDE << "Voce ganhou " << pontosGanhos << " pontos de recompensa!" << RESET << std::endl;
+}
+
+void Cliente::exibirPontos() {
+    int pontos = pontosRecompensa[username];
+    std::cout << FG_CIANO << "Voce tem " << pontos << " pontos acumulados." << RESET << std::endl;
+}
+
+bool Cliente::aplicarDescontoSeDisponivel(double& valorPedido) {
+    int pontos = pontosRecompensa[username];
+    if (pontos >= 20) {
+        double desconto = 10.0; // Desconto fixo de R$ 10
+        valorPedido = std::max(0.0, valorPedido - desconto);
+        pontosRecompensa[username] -= 20;
+        std::cout << FG_VERDE << "Desconto de R$ " << desconto << " aplicado! Voce tem " 
+                  << pontosRecompensa[username] << " pontos restantes." << RESET << std::endl;
+        return true;
+    }
+    return false;
 }
 
 const std::map<std::string, std::string>& Cliente::getClientes() {
