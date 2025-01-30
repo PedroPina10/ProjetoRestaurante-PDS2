@@ -18,6 +18,10 @@ void Cliente::criarConta() {
     while (true) {
         std::cout << FG_CIANO << "Escolha um nome de usuario: " << RESET;
         std::getline(std::cin, user);
+        if(validarSenha(user)){
+            std::cout << FG_VERMELHO << "Nome de usuario nao pode ser nulo!" << RESET << std::endl;
+            continue;
+        }
         if (clientes.find(user) != clientes.end()) {
             std::cout << FG_VERMELHO << "Nome de usuario indisponivel." << RESET << std::endl;
         }
@@ -25,8 +29,15 @@ void Cliente::criarConta() {
             break;
         }
     }
+    while(1){
     std::cout << FG_CIANO << "Escolha uma senha: " << RESET;
     std::getline(std::cin, pass);
+    if(validarSenha(pass)){
+        std::cout << FG_VERMELHO << "A senha nao pode ser nula!" << RESET << std::endl;
+        continue;
+        }
+    else break;
+    }
     clientes[user] = pass;
     std::cout << FG_VERDE << "Conta criada com sucesso!" << RESET << std::endl;
 }
@@ -54,11 +65,19 @@ void Cliente::alterarSenha() {
     std::cout << FG_CIANO << "Digite a senha atual: " << RESET;
     std::getline(std::cin, senhaAtual);
     if (senhaAtual == senha) {
+        while(1){
         std::cout << FG_CIANO << "Digite a nova senha: " << RESET;
         std::getline(std::cin, novaSenha);
+        if(validarSenha(novaSenha)){
+            std::cout << FG_VERMELHO << "A senha nao pode ser nula!" << RESET << std::endl;
+        }
+        else{
         senha = novaSenha;
-        clientes[username] = novaSenha; // Atualiza o banco de dados est�tico
+        clientes[username] = novaSenha; // Atualiza o banco de dados estatico
         std::cout << FG_VERDE << "Senha alterada com sucesso!" << RESET << std::endl;
+        break;
+            }
+        }
     }
     else {
         std::cout << FG_VERMELHO << "Senha atual incorreta." << RESET << std::endl;
